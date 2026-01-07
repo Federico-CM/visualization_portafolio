@@ -14,6 +14,9 @@ The goal of this portfolio is to demonstrate my ability to:
 - Data cleaning & transformation
 - Exploratory data analysis (EDA)
 - Visual storytelling and communication
+---
+
+## Examples
 
 ![](https://github.com/Federico-CM/visualization_portafolio/blob/main/fertility_vs_lifeexp.gif)
 
