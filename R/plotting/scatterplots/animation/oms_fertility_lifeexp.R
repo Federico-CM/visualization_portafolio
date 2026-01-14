@@ -1,49 +1,20 @@
 # ============================================================
 # Health indexes evolution over time
-# Third world" (1965 baseline)
-# using OMS data (1960–2023)
-# - Labels are defined ONLY using 1965 thresholds (fixed)
-# - Animation runs for the full oms time range (1960–2023)
 # ============================================================
 library(ggplot2)
 library(gganimate)
 library(dplyr)
 library(readr)
 
-# This assumes that the project works with the repository structure
-# If the directory structure changes, adjust the following command
 oms <- read_csv("../../../../data/processed/oms_fertility_lifeexp.csv")
 
 # --- Controls ---
 frames_per_year <- 15   # higher = slower & smoother
 fps <- 20               # MUST be a factor of 100 for GIFs
-
-# --- Rule thresholds ---
-# The concept of third world is latent
-# The following proxy roughly matches that in 1965
-fertility_cutoff <- 3.5
-lifeexp_cutoff   <- 65
-
-# --- Data Processing---
-# Ensure correct types + keep the full 1960–2023 range that oms has
-oms <- oms %>%
-  transmute(
-    country = as.character(country),
-    iso3 = as.character(iso3),
-    year = as.numeric(year),
-    population = as.numeric(population),
-    life_expectancy = as.numeric(life_expectancy),
-    fertility = as.numeric(fertility)
-  ) #%>%
-  #filter(!is.na(year), !is.na(fertility), !is.na(life_expectancy), !is.na(population)) %>%
-  #filter(year >= 1960, year <= 2023)
-
 years <- sort(unique(oms$year))
 nframes <- length(years) * frames_per_year
 
-# Create year-label data for EVERY frame (prevents flicker)
-frame_times <- seq(min(years), max(years), length.out = nframes)
-
+#I use the following df for the giant year label
 year_df_full <- data.frame(
   year = frame_times,
   x = Inf,
@@ -51,11 +22,20 @@ year_df_full <- data.frame(
   year_label = round(frame_times)
 )
 
+# Create year-label data for EVERY frame (prevents flicker)
+frame_times <- seq(min(years), max(years), length.out = nframes)
+
+# --- Rule thresholds ---
+# The concept of third world is latent
+# The following proxy roughly matches that in 1965
+fertility_cutoff <- 3.5
+lifeexp_cutoff   <- 65
+
 # ============================================================
 # 1) DEFINE GROUPS FROM 1965 ONLY (FIXED LABELS)
-#    If a country has no 1965 observation, it becomes NA ("Unknown")
 # ============================================================
 
+# Third and first word are easy to discriminate in 1965
 oms_1965 <- oms %>%
   filter(year == 1965) %>%
   select(country, iso3, fertility, life_expectancy, population) %>%
@@ -66,16 +46,26 @@ oms_1965 <- oms %>%
     )
   )
 
-# Join those 1965-based labels into the full dataset
+# Join 1965-based labels into the full dataset
 oms <- oms %>%
   left_join(oms_1965 %>% select(country, world_type), by = "country") %>%
   mutate(
-    world_type = if_else(is.na(world_type), "Unknown", world_type),
-    world_type = factor(world_type, levels = c("First world", "Third world", "Unknown"))
+    world_type = factor(world_type, levels = c("First world", "Third world"))
   )
 
 # ============================================================
-# 2) ANIMATION (COLORED BY 1965 GROUP)
+# 1.5) OVERRIDE COLOR GROUP FOR MEXICO (black)
+# ============================================================
+# The following can be altered or commented to focus on another country or none
+oms <- oms %>%
+  mutate(
+    colour_group = if_else(country == "Mexico" | iso3 == "MEX", "Mexico", as.character(world_type)),
+    # Mexico LAST in legend:
+    colour_group = factor(colour_group, levels = c("First world", "Third world", "Mexico"))
+  )
+
+# ============================================================
+# 2) ANIMATION (COLORED BY 1965 GROUP
 # ============================================================
 
 p <- ggplot(
@@ -84,7 +74,7 @@ p <- ggplot(
     fertility,
     life_expectancy,
     size = population,
-    colour = world_type
+    colour = colour_group
   )
 ) +
   geom_point(alpha = 0.7, show.legend = TRUE) +
@@ -98,11 +88,15 @@ p <- ggplot(
     size = 25,
     alpha = 0.4
   ) +
-  scale_colour_manual(values = c(
-    "First world" = "#1b9e77",
-    "Third world" = "#d95f02",
-    "Unknown"     = "grey70"
-  )) +
+  scale_colour_manual(
+    values = c(
+      "First world" = "#1b9e77",
+      "Third world" = "#d95f02",
+      "Mexico"      = "black"
+    ),
+    breaks = c("First world", "Third world", "Mexico"),
+    drop = FALSE
+  ) +
   scale_x_continuous(breaks = c(0, 2, 4, 6, 8, 10)) +
   guides(size = "none") +
   labs(
@@ -110,7 +104,7 @@ p <- ggplot(
     subtitle = "Third world countries catch up over time",
     x = "Children per Woman",
     y = "Life Expectancy",
-    colour = "Color"
+    colour = "Legend"
   ) +
   theme(
     axis.title.x  = element_text(size = 20),
