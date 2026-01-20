@@ -17,14 +17,14 @@ The goal of this portfolio is to demonstrate my ability to:
 ---
 
 ## Examples
+### Portfolio PDF
+📄 [View full portfolio (PDF)](
+https://github.com/Federico-CM/CV/blob/main/portfolio_EN.pdf
+)
 
 ### Animation – Fertility vs Life Expectancy
 [![Fertility vs Life Expectancy](https://raw.githubusercontent.com/Federico-CM/visualization_portafolio/main/docs/assets/fertility_vs_lifeexp.gif)](
 https://github.com/Federico-CM/visualization_portafolio/blob/main/docs/assets/fertility_vs_lifeexp.gif
 )
 
-### Portfolio PDF
-📄 [View full portfolio (PDF)](
-https://github.com/Federico-CM/CV/blob/main/portfolio_EN.pdf
-)
 
