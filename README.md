@@ -18,7 +18,7 @@ The goal of this portfolio is to demonstrate my ability to:
 
 ## Examples
 ### Portfolio PDF
-📄 [View full portfolio (PDF)](
+📄 [View portfolio sample (PDF)](
 https://github.com/Federico-CM/CV/blob/main/portfolio_EN.pdf
 )
 
