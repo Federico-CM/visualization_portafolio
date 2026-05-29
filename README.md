@@ -10,10 +10,12 @@ The goal of this portfolio is to demonstrate my ability to:
 ---
 
 ## Tools & Techniques
-- **R** (tidyverse, ggplot2)
+- **R** (tidyverse, ggplot2, Shiny)
 - Data cleaning & transformation
 - Exploratory data analysis (EDA)
 - Visual storytelling and communication
+- Interactive dashboard development
+
 ---
 
 ## Examples
@@ -23,17 +25,40 @@ The goal of this portfolio is to demonstrate my ability to:
 https://github.com/Federico-CM/CV/blob/main/portfolio_EN.pdf
 )
 
+---
+
+### Featured Interactive Dashboard
+
+#### Web-based historical criminal-records exploration and analysis dashboard
+
+<a href="https://proudbucket.shinyapps.io/Consulta_GD037/">
+  <img src="https://raw.githubusercontent.com/Federico-CM/visualization_portafolio/main/plots/spanish/dashboards/dashboard.png" width="850"/>
+</a>
+
+**Live application:**  
+🔗 [Open the working dashboard](https://proudbucket.shinyapps.io/Consulta_GD037/)
+
+**Source code:**  
+💻 [View the R Shiny code](https://github.com/Federico-CM/visualization_portafolio/blob/main/plots/spanish/dashboards/app.R)
+
+This **R Shiny** dashboard allows researchers to perform advanced searches and filtering operations in seconds. 
+Creating the app involved data cleaning for **10,000+ historical legal records** and feature engineering using **Bash** and **Python**.
+
+---
+
 ### Visualizations
 
 <table>
 <tr>
 <td align="center">
 
+#### Animated Plot
 #### Fertility vs Life Expectancy
 
 [![Fertility vs Life Expectancy](https://raw.githubusercontent.com/Federico-CM/visualization_portafolio/main/docs/assets/fertility_vs_lifeexp.gif)](
 https://github.com/Federico-CM/visualization_portafolio/blob/main/docs/assets/fertility_vs_lifeexp.gif
 )
+
 
 </td>
 
