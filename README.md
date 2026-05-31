@@ -59,6 +59,7 @@ Creating the app involved data cleaning for **10,000+ historical legal records**
 https://github.com/Federico-CM/visualization_portafolio/blob/main/docs/assets/fertility_vs_lifeexp.gif
 )
 
+Built in R using World Health Organization data, this animation shows temporal trends and clusters in an efficient and attractive way.
 
 </td>
 
@@ -68,6 +69,7 @@ https://github.com/Federico-CM/visualization_portafolio/blob/main/docs/assets/fe
 
 <img src="https://raw.githubusercontent.com/Federico-CM/visualization_portafolio/main/plots/japanese/infographics/daruma_infographic.png" width="400"/>
 
+This Japanese-language infographic was created with NLP techniques to identify and visualize key data-analysis concepts from a synthetic text corpus.
 </td>
 </tr>
 </table>
