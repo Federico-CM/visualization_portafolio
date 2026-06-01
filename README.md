@@ -69,7 +69,11 @@ Built in R using World Health Organization data, this animation shows temporal t
 
 <img src="https://raw.githubusercontent.com/Federico-CM/visualization_portafolio/main/plots/japanese/infographics/daruma_infographic.png" width="400"/>
 
-This Japanese-language infographic was created with NLP techniques to identify and visualize key data-analysis concepts from a synthetic text corpus.
+This Japanese-language infographic was created with NLP techniques to identify and visualize [key data-analysis](https://github.com/Federico-CM/visualization_portafolio/tree/main/plots/japanese/data_science_terms.csv) concepts from a synthetic text corpus.
+
+**Source code:**  
+💻 [View the python code](https://github.com/Federico-CM/visualization_portafolio/tree/main/plots/japanese/infographics)
+
 </td>
 </tr>
 </table>
