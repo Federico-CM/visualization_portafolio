@@ -41,8 +41,28 @@ https://github.com/Federico-CM/CV/blob/main/portfolio_EN.pdf
 **Source code:**  
 💻 [View the R Shiny code](https://github.com/Federico-CM/visualization_portafolio/blob/main/plots/spanish/dashboards/app.R)
 
-This **R Shiny** dashboard allows researchers to perform advanced searches and filtering operations in seconds. 
+This **R Shiny** dashboard allows researchers to perform advanced searches and filtering operations in seconds.
 Creating the app involved data cleaning for **10,000+ historical legal records** and feature engineering using **Bash** and **Python**.
+
+---
+
+### Peer-Reviewed Research Visualization
+
+#### Spatial Distribution of an Emerging Wildlife Pathogen
+
+<a href="https://doi.org/10.1007/s10393-020-01504-w">
+  <img src="https://raw.githubusercontent.com/Federico-CM/visualization_portafolio/main/plots/english/maps/choropleth/dendrobatidis.tif" width="850"/>
+</a>
+
+This choropleth map was developed for a peer-reviewed epidemiological study investigating the distribution of *Batrachochytrium dendrobatidis* (Bd), a globally important amphibian pathogen.
+
+The visualization highlights spatial differences in pathogen occurrence inferred from the distribution of infected and carrier host species. The work combined ecological, epidemiological, and geographic data to identify regions with elevated pathogen presence and communicate complex spatial patterns effectively.
+
+**Publication:**  
+📄 [Ecological and Anthropogenic Drivers of the Geographic Distribution of *Batrachochytrium dendrobatidis* in Eastern Asia](https://doi.org/10.1007/s10393-020-01504-w)
+
+**Research impact:**  
+📈 Cited **35 times** by subsequent scientific studies.
 
 ---
 
