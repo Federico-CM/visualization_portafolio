@@ -50,9 +50,7 @@ Creating the app involved data cleaning for **10,000+ historical legal records**
 
 #### Spatial Distribution of an Emerging Wildlife Pathogen
 
-<a href="https://doi.org/10.1007/s10393-020-01504-w">
-  <img src="https://raw.githubusercontent.com/Federico-CM/visualization_portafolio/main/plots/english/maps/choropleth/dendrobatidis.tif" width="850"/>
-</a>
+![Spatial Distribution of an Emerging Wildlife Pathogen](https://raw.githubusercontent.com/Federico-CM/visualization_portafolio/main/plots/english/maps/choropleth/dendrobatidis.png)
 
 This choropleth map was developed for a peer-reviewed epidemiological study investigating the distribution of *Batrachochytrium dendrobatidis* (Bd), a globally important pathogen. 
 
